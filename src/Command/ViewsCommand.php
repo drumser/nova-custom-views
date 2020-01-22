@@ -1,6 +1,6 @@
 <?php
 
-namespace devmtm\NovaCustomViews;
+namespace Quantick\NovaCustomViews\Command;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
@@ -73,7 +73,7 @@ class ViewsCommand extends Command
     protected function handelNewResource() {
 
         (new Filesystem)->copyDirectory(
-            __DIR__ . '/../stubs/views',
+            __DIR__ . '/../../stubs/views',
             $this->viewsPath()
         );
 
@@ -364,21 +364,21 @@ class ViewsCommand extends Command
 
     protected function copyView($view) {
         (new Filesystem)->copy(
-            __DIR__ . '/../stubs/views/resources/js/views/' . $view,
+            __DIR__ . '/../../stubs/views/resources/js/views/' . $view,
             $this->viewsPath() . '/resources/js/views/' . $view
         );
     }
 
     protected function copyAllViews() {
         (new Filesystem)->copyDirectory(
-            __DIR__ . '/../stubs/views/resources/js/views',
+            __DIR__ . '/../../stubs/views/resources/js/views',
             $this->viewsPath() . '/resources/js/views'
         );
     }
 
     protected function copyServiceProvider() {
         (new Filesystem)->copy(
-            __DIR__ . '/../stubs/views/src/ViewsServiceProvider.stub',
+            __DIR__ . '/../../stubs/views/src/ViewsServiceProvider.stub',
             $this->viewsPath() . '/src/ViewsServiceProvider.stub'
         );
     }
@@ -392,14 +392,14 @@ class ViewsCommand extends Command
 
     protected function copyComponentsRegistrar() {
         (new Filesystem)->copy(
-            __DIR__ . '/../stubs/views/resources/js/views.js',
+            __DIR__ . '/../../stubs/views/resources/js/views.js',
             $this->viewsPath() . '/resources/js/views.js'
         );
     }
 
     protected function copyComposer() {
         (new Filesystem)->copy(
-            __DIR__ . '/../stubs/views/composer.json',
+            __DIR__ . '/../../stubs/views/composer.json',
             $this->viewsPath() . '/composer.json'
         );
     }

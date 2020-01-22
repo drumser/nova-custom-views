@@ -1,6 +1,6 @@
 <?php
 
-namespace devmtm\NovaCustomViews;
+namespace Quantick\NovaCustomViews;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
@@ -27,6 +27,6 @@ class NovaCustomViewsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands([ViewsCommand::class, DashboardViewCommand::class, Error403ViewCommand::class, Error404ViewCommand::class]);
+        $this->commands([Command\ViewsCommand::class, Command\DashboardViewCommand::class, Command\Error403ViewCommand::class, Command\Error404ViewCommand::class]);
     }
 }

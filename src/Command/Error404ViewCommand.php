@@ -1,6 +1,6 @@
 <?php
 
-namespace devmtm\NovaCustomViews;
+namespace Quantick\NovaCustomViews\Command;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
@@ -37,7 +37,7 @@ class Error404ViewCommand extends Command
         }
 
         (new Filesystem)->copyDirectory(
-            __DIR__ . '/../stubs/404',
+            __DIR__ . '/../../stubs/404',
             $this->viewsPath()
         );
 
